@@ -1,0 +1,16 @@
+<%= render "shared/login_form" %>
+
+<h2>latest news</h2>
+<ul>
+<% Article.sidebar_articles(5).each do |article|%>
+	<li><%= link_to "headline", "#" %></li>
+<%end%>
+</ul>
+
+<h2>members' blog</h2>
+<ul>
+<%5.times do |i|%>
+	<li><%= link_to "headline", "#" %></li>
+<%end%>
+</ul>
+

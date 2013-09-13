@@ -1,0 +1,7 @@
+<% 5.times do |x| %>
+<h2>headline</h2>
+<p>
+here comes text. here comes text. here comes text. here comes text. here comes text. here comes text. 
+</p>
+
+<%end%>

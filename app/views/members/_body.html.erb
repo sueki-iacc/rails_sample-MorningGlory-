@@ -1,0 +1,30 @@
+<table class="attr">
+	<tr>
+		<th width="150">back#</th>
+		<td><%= @member.number %></td>
+	</tr>
+	<tr>
+		<th>nickname</th>
+		<td><%= @member.name %></td>
+	</tr>
+	<tr>
+		<th>fullname</th>
+		<td><%= @member.full_name %></td>
+	</tr>
+	<tr>
+		<th>gender</th>
+		<td><%= @member.gender==0 ? "man" : "woman" %></td>
+	</tr>
+	<tr>
+		<th>birthday</th>
+		<td><%= @member.birthday.try(:strftime, "%Ynen%mgatsu%dnichi") %></td>
+	</tr>
+	<tr>
+		<th>mail</th>
+		<td><%= @member.email %></td>
+	</tr>
+	<tr>
+		<th>authorized</th>
+		<td><%= @member.administrator? ? "yes" : "no" %></td>
+	</tr>
+</table>

@@ -1,0 +1,7 @@
+require 'test_helper'
+
+class MembersControllerTest < ActionController::TestCase
+  test "the truth" do
+    assert 1==2, "1 is not 2"
+  end
+end

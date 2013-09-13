@@ -1,0 +1,31 @@
+<% @page_title="news overviews" %>
+
+<h1><%= @page_title %></h1>
+<%= form_tag :search_members, method: :get do %>
+<p><%= text_field_tag "q", params[:q] %></p>
+<%= submit_tag "search" %>
+<% end %>
+
+<p><%= link_to "new article", :edit %></p>
+<% if @aricles.present? %>
+
+<table class="list">
+	<tr>
+		<th>title</th>
+		<th>date</th>
+		<th>operation</th>
+	</tr>
+	<% @articles.each do |article| %>
+	<tr>
+		<td align="right"><%= article.title %></td>
+		<td><%= link_to article.released_at.strftime("%Y/%m/%d %H:%M") %></td>
+		<td>
+			<%= link_to "edit", [:edit, article] %> | 
+			<%= link_to "delete", article, method: :delete, confirm: "really delete???" %>
+		</td>
+	<tr>
+	<% end %>
+</table>
+<% else %>
+<%= simple_format("no news.") %>
+<% end %>

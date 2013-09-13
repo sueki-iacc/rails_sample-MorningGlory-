@@ -1,0 +1,6 @@
+<% @page_title="add new member" %>
+
+<%= form_for @member do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

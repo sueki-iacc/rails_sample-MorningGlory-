@@ -1,0 +1,32 @@
+
+<%= image_tag("logo.gif", size: "272x48", alt: "Morning Glory") %>
+<% if @current_member %>
+<p class="member">
+<%= link_to @current_member.name+" sann", :account %> | 
+<%= link_to "logout", :session, method: :delete, confirm: "really logout???" %>
+</p>
+<% end %>
+
+<% if controller.kind_of?(Admin::Base) %>
+<div class="menubar" id="admin_menubar">
+<%= menu_link_to "admin top", :admin_root %> &nbsp;|&nbsp;
+<%= menu_link_to "admin member", :admin_members %> &nbsp;|&nbsp;
+<%= menu_link_to "admin articles", :admin_articles %> &nbsp;|&nbsp;
+<%= menu_link_to "TOP", :root %>
+</div>
+<% else %>
+
+<div class="menubar">
+<%= menu_link_to "TOP", :root %> &nbsp;|&nbsp;
+<%= menu_link_to "NEWS", :articles %> &nbsp;|&nbsp;
+<%= menu_link_to "BLOG", "#" %>
+	<% if @current_member %>
+	 &nbsp;|&nbsp;
+	<%= menu_link_to "MEMBER", :members %>
+		<% if @current_member.administrator? %>
+		 &nbsp;|&nbsp; <%= menu_link_to "MANAGE", :admin_root %>
+		<% end %>
+	<% end %>
+</div>
+
+<% end %>

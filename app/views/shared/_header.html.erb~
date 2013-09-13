@@ -1,0 +1,9 @@
+<%= image_tag("logo.gif", size: "272x48", alt: "Morning Glory") %>
+
+<div class="menubar">
+<%= menu_link_to "TOP", :root %> &nbsp;|&nbsp;
+<%= menu_link_to "NEWS", "#" %> &nbsp;|&nbsp;
+<%= menu_link_to "BLOG", "#" %> &nbsp;|&nbsp;
+<%= menu_link_to "MEMBER", :members %> &nbsp;|&nbsp;
+<%= menu_link_to "MANAGE", "#" %>
+</div>

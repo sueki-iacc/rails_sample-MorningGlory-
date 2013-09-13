@@ -1,0 +1,2 @@
+<%= link_to "about this site", :about %> | 
+Copyright (C) <%= link_to "hogehoge Inc.", "htto://google.com"%>2007-2012

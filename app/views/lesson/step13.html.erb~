@@ -1,0 +1,3 @@
+<p>
+	<%= @time.strftime("%Y/%m/%(%a) %H:%M:%S") %>
+</p>

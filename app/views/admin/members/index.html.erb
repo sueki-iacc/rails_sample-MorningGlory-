@@ -1,0 +1,33 @@
+<% @page_title="members" %>
+
+<h1><%= @page_title %></h1>
+<%= form_tag :search_admin_members, method: :get do %>
+<p><%= text_field_tag "q", params[:q] %></p>
+<%= submit_tag "search" %>
+<% end %>
+
+<p><%= link_to "new member", :new_admin_member %></p>
+<% if @members.present? %>
+
+<table class="list">
+	<tr>
+		<th>#</th>
+		<th>nickname</th>
+		<th>full_name</th>
+		<th>operation</th>
+	</tr>
+	<% @members.each do |member| %>
+	<tr>
+		<td align="right"><%= member.number %></td>
+		<td><%= link_to member.name, [:admin, member] %></td>
+		<td><%= member.full_name %></td>
+		<td>
+			<%= link_to "edit", [:edit, :admin, member] %> | 
+			<%= link_to "delete", [:admin, member], method: :delete, confirm: "really delete???" %>
+		</td>
+	<tr>
+	<% end %>
+</table>
+<% else %>
+<%= simple_format("member not found.") %>
+<% end %>
